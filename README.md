@@ -6,7 +6,17 @@ This project implements an abstractive text summarization model from scratch usi
 
 The primary goal of this project was to understand and implement the core concepts behind sequence-to-sequence learning, attention mechanisms, and neural text generation rather than relying on pre-trained transformer models.
 
-The model was trained on the XSum dataset and deployed through a simple web application interface.
+The model was trained on the XSum dataset and deployed through a web application built with Flask.
+
+---
+
+## Live Demo
+
+🌐 **Try the deployed application here:**
+
+[**https://nlp-text-summarizer-m587.onrender.com/**](https://nlp-text-summarizer-m587.onrender.com/)
+
+> Note: The application may take a few seconds to start if the Render free tier instance is inactive.
 
 ---
 
@@ -18,8 +28,8 @@ The model was trained on the XSum dataset and deployed through a simple web appl
 * Teacher forcing during training
 * Greedy decoding during inference
 * Training and validation pipeline
-* Web interface for generating summaries
-* Model deployment ready for Render
+* Flask-based web interface for generating summaries
+* Deployment on Render
 
 ---
 
@@ -48,11 +58,9 @@ The model was trained on the XSum dataset and deployed through a simple web appl
 
 ## Dataset
 
-Dataset Used:
+**Dataset Used:** XSum (Extreme Summarization Dataset)
 
-XSum (Extreme Summarization Dataset)
-
-The dataset contains BBC news articles paired with single-sentence summaries.
+The dataset contains BBC news articles paired with single-sentence summaries, making it a challenging benchmark for abstractive summarization.
 
 ---
 
@@ -63,6 +71,7 @@ The dataset contains BBC news articles paired with single-sentence summaries.
 * Hugging Face Datasets
 * Flask
 * HTML/CSS
+* Render
 
 ---
 
@@ -71,22 +80,24 @@ The dataset contains BBC news articles paired with single-sentence summaries.
 Through this project, I implemented:
 
 * Sequence-to-Sequence models from scratch
-* Attention mechanisms
-* Teacher forcing
+* Encoder-Decoder architectures
+* Bahdanau Attention mechanisms
+* Teacher forcing during training
 * Neural text generation
 * Dataset preprocessing pipelines
-* Training and evaluation workflows
-* Model deployment fundamentals
+* Training and validation workflows
+* Model serialization and loading
+* Web deployment fundamentals
 
 ---
 
 ## Results
 
-The project successfully demonstrates the complete workflow of neural text summarization.
+The project successfully demonstrates the complete workflow of neural text summarization, from data preprocessing and model training to deployment.
 
 Since the model is a relatively small LSTM-based architecture trained from scratch, generated summaries are not expected to match the performance of modern transformer-based models such as BART, T5, or PEGASUS.
 
-The focus of this project is understanding the underlying NLP concepts and implementing them end-to-end.
+The primary objective of this project was to gain a deeper understanding of the underlying NLP concepts and implement them end-to-end without relying on pre-trained summarization models.
 
 ---
 
@@ -98,6 +109,8 @@ The focus of this project is understanding the underlying NLP concepts and imple
 * Transformer-based Architectures
 * ROUGE Evaluation Metrics
 * Improved Inference Pipeline
+* Better Handling of Unknown Tokens
+* Enhanced Summary Quality through Advanced Decoding Strategies
 
 ---
 
@@ -142,3 +155,13 @@ python app.py
 Visit:
 
 http://127.0.0.1:5000
+
+---
+
+## Deployment
+
+The application is deployed on Render and can be accessed at:
+
+[**https://nlp-text-summarizer-m587.onrender.com/**](https://nlp-text-summarizer-m587.onrender.com/)
+
+This deployment loads the trained model and vocabulary files to perform inference through a simple web interface, allowing users to generate summaries directly from their browser.
