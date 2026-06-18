@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Summarizer</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Text Summarizer</h1>
+    <h2> Neural Text Summarization using Seq2Seq + Bahdanau Attention </h2>
+    <form method="POST">
+
+        <textarea
+            name="article"
+            placeholder="Paste article..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Generate Summary
+        </button>
+
+    </form>
+
+    {% if summary %}
+
+    <div class="summary">
+
+        <h2>Summary</h2>
+
+        <p>{{ summary }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
